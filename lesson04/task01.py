@@ -6,6 +6,6 @@ name1 = input("Введите имя: ")
 age1 = int(input("Введите возраст: "))
 
 def man(name1, age1):
-    return f"{name1}, {age1} год(а)"
+    return f"{name1}, {age1} год(а), проживает в городе Москва"
 
 print(man(name1, age1))
