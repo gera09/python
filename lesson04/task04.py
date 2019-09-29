@@ -16,21 +16,20 @@ health = 100
 damage = 50
 armor = 1.2
 
-dictionary1 = {person1: damage, person2: health}
+dictionary2 = {person1: damage, person2: (health, armor)}
 
 
-# print(dictionary1)
-# print(dictionary1.get(person2))
-
-def armor_f(damage1, armor1):
-    return damage1 / armor1
+def armor_f(damage_f, armor_v):
+    return damage_f / armor_v
 
 
-def attack(dictionary2):
-    result = armor_f(damage, armor)
-    dictionary2[person2] = dictionary2.get(person2) - result
+def attack(health_f, armor_v, damage_f):
+    result = armor_f(damage_f, armor_v)
+    dictionary2[person2] = (
+        health_f - result, dictionary2[person2][1])  # в этом месте функция обрабатывает кортеж словаря
 
 
-print(f'Персоны до атаки: {dictionary1}')  # health = 100
-attack(dictionary1)  # функция производит атаку  person1 на person2
-print(f'Персоны после атаки: {dictionary1}')  # health = 50
+print(f'Персоны до атаки: {dictionary2}, т.е. здоровье = {dictionary2[person2][0]}')  # health = 100
+attack(dictionary2[person2][0], dictionary2[person2][1],
+       dictionary2.get(person1))  # функция производит атаку  person1 на person2
+print(f'Персоны после атаки: {dictionary2}, т.е. здоровье = {dictionary2[person2][0]}')  # health = 58.33333333333333

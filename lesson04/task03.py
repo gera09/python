@@ -21,14 +21,10 @@ dictionary1 = {person1: damage, person2: health}
 # print(dictionary1)
 # print(dictionary1.get(person2))
 
-def attack(dictionary):
-    dictionary1[person2] = dictionary1.get(person2) - dictionary1.get(person1)
+def attack(health_f, damage_f):
+    dictionary1[person2] = health_f - damage_f
 
 
-print(f'Персоны до атаки: {dictionary1}')  # health = 100
-attack(dictionary1)  # функция производит атаку  person1 на person2
-print(f'Персоны после атаки: {dictionary1}')  # health = 50
-
-# Искренний вопрос: зачем нам словарь, если по заданию функция работает с элементами словаря, а на вход принимает
-# атакующего и атакуемого отдельно, зачем? А если у нас будет в словаре 1000 человек? Тоже всех будем ручками
-# прописывать в аргументах функции???????1
+print(f'Персоны до атаки: {dictionary1}, т.е. здоровье = {dictionary1.get(person2)}')  # health = 100
+attack(dictionary1.get(person2), dictionary1.get(person1))  # функция производит атаку  person1 на person2
+print(f'Персоны после атаки: {dictionary1}, т.е. здоровье = {dictionary1.get(person2)}')  # health = 50
