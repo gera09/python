@@ -10,18 +10,23 @@
 # ### В теле функция должна получить параметр damage атакующего и отнять это количество от health атакуемого.
 # Функция должна сама работать со словарями и изменять их значения.
 
-arr1 = {}
-name = input("Введите имя: ")
+person1 = input("Введите имя атакующего: ")
+person2 = input("Введите имя атакуемого: ")
 health = 100
 damage = 50
 
-for i in range(3):
-    # number = int(input(f"Введите число № {i+1}: "))
-    # arr1.append(number)
+dictionary1 = {person1: damage, person2: health}
 
+# print(dictionary1)
+# print(dictionary1.get(person2))
 
-def attack(person1, person2):
-    return max(arr1)
+def attack(dictionary1):
+    dictionary1[person2] = dictionary1.get(person2) - dictionary1.get(person1)
 
-#print(arr1)
-# print(max_arr(arr1))
+print(dictionary1)  # health = 100
+attack(dictionary1) # функция производит атаку  person1 на person2
+print(dictionary1)  # health = 50
+
+# Искренний вопрос: зачем нам словарь, если по заданию функция работает с элементами словаря, а на вход принимает
+# атакующего и атакуемого отдельно, зачем? А если у нас будет в словаре 1000 человек? Тоже всех будем ручками
+# прописывать в аргументах функции???????1

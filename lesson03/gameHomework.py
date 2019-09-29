@@ -27,6 +27,8 @@
 import random
 
 print("Загадайте число от 1 до 100, компьютер будет его угадывать.")
+print("Для продолжения нажмите любую клавишу")
+input()
 
 rezult = None
 numberDown = 1
@@ -59,10 +61,10 @@ while not rezult == "=":
         print("Вы ввели неверный знак. Повторите ввод.")
         print("")
         continue
-    print(numberDown)
-    print(numberUp)
+    # print(numberDown)
+    # print(numberUp)
 
-    if numberDown == numberUp: #это вариант победы, при диапазоне равному единице
+    if numberDown == numberUp: #это вариант победы, при диапазоне равному единице (чтобы комп вел себя человечно)
         print(f"Единственное возможное число: {number}")
         print(f"Победа! Компьютер затратил {j} ходов")
         break
