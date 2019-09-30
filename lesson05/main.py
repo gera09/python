@@ -3,3 +3,19 @@
 # Примечание: Попробуйте импортировать как весь модуль целиком (например из задачи 1),
 # так и отдельные функции из модуля.
 
+import os
+import task01
+from task02 import random_funk
+
+print('Каталоги созданы! Список каталогов и файлов папки проекта в текущий момент:')
+task01.mkdir(os.getcwd())
+print(os.listdir(os.getcwd()))
+print()
+
+print('Каталоги удалены! Список каталогов и файлов папки проекта в текущий момент:')
+task01.del_dir(os.getcwd())
+print(os.listdir(os.getcwd()))
+
+print()
+list1 = range(0, 4)
+print(f'Функция из задачи 2, случайное число: {random_funk(list1)}')
