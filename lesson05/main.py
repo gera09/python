@@ -17,5 +17,5 @@ task01.del_dir(os.getcwd())
 print(os.listdir(os.getcwd()))
 
 print()
-list2 = [0, 4]
+list2 = [1, 2, 3, 4]
 print(f'Функция из задачи 2, случайное число: {random_funk(list2)}')
