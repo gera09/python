@@ -4,3 +4,31 @@
 # функцию и печатаем результат, который вернула функция. Обработать возможность возникновения исключительной ситуации,
 # которая поднимается внутри функции.
 
+while True:  # цикл для защиты от ввода не соответсующему типу integer
+    try:
+        number = int(input("Введите целое число от 0 до 100: "))
+        break
+    except ValueError:
+        print("Ошибка ввода!")
+        continue
+    else:
+        break  # тут почему-то pcharm отметил код желтым, если подскажете - буду благодарен )
+
+
+def number_random(number_x):
+    try:
+        if number_x == 13:
+            raise ValueError
+        if number_x < 0 or number_x > 100:
+            raise Exception
+    except ValueError as e:
+        return "Ошибка - число равно 13", e
+    except Exception as e:
+        return "Неизвестная ошибка", e  # обработает как ошибку ввода (если не число), так и числа вне диапазона
+    else:
+        return number_x ** 2
+
+
+result = number_random(number)
+
+print(result)
