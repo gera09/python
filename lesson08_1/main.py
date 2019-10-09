@@ -8,7 +8,7 @@ command = sys.argv[1]
 # print(sys.argv)
 
 if command == 'list':
-    get_list()
+    get_list(work_dir)
 elif command == 'create_file':
     try:
         name = sys.argv[2]

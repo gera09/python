@@ -18,7 +18,7 @@ def create_folder(name):
 
 
 def get_list(folders_only=False):
-    rezult = os.listdir()
+    rezult = os.listdir(work_dir)
     if folders_only:
         rezult = [f for f in rezult if os.path.isdir(f)]
     print(rezult)
