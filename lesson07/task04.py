@@ -6,13 +6,11 @@
 
 while True:  # цикл для защиты от ввода не соответсующему типу integer
     try:
-        number = int(input("Введите целое число от 0 до 100: "))
+        number: int = int(input("Введите целое число от 0 до 100: "))
         break
     except ValueError:
         print("Ошибка ввода!")
         continue
-    else:
-        break  # тут почему-то pcharm отметил код желтым, если подскажете - буду благодарен )
 
 
 def number_random(number_x):
